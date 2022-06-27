@@ -28,7 +28,8 @@ let state = {
             { id: 2, message: 'Yo!' },
             { id: 3, message: 'Yo!' },
             { id: 4, message: 'Yo!' }
-        ]
+        ],
+        newMessageText: 'it-kamasutra.com'
     },
 
     navbarPage: {
@@ -55,6 +56,21 @@ export let addPost = () => {
 
 export let updateNewPostText = (newText) => {
     state.profilePage.newPostText = newText
+    rerenderEntireTree(state)
+}
+
+export let addMessage = () => {
+    let newMessage = {
+        id: 5,
+        message: state.dialogsPage.newMessageText
+    }
+    state.dialogsPage.messages.push(newMessage)
+    state.dialogsPage.newMessageText = ''
+    rerenderEntireTree(state)
+}
+
+export let updateNewMessageText = (newText) => {
+    state.dialogsPage.newMessageText = newText
     rerenderEntireTree(state)
 }
 
