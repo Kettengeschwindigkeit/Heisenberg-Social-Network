@@ -14,14 +14,11 @@ const Dialogs = (props) => {
     let addMessage = () => {
         let text = newMessageElement.current.value
         props.addMessage(text)
-        console.log(text)
     }
 
     let onMessageChange = () => {
         let text = newMessageElement.current.value
         props.updateNewMessageText(text)
-        console.log(text)
-
     }
 
     return (
