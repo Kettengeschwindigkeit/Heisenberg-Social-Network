@@ -36,7 +36,7 @@ let store = {
             newMessageBody: ''
         },
 
-        sidebarPage: {
+        sidebar: {
 
             friends: [
                 { id: 1, name: 'Badger', avatar: 'https://quizswish.com/wp-content/uploads/2020/08/badger-bb-311x311.jpg' },
