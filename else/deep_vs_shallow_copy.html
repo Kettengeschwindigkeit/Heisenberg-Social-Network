@@ -1,0 +1,71 @@
+<!-- https://www.youtube.com/watch?v=6napu-MGQDo&list=PLcvhF2Wqh7DNVy1OCUpG3i5lyxyBWhGZ8&index=47 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deep copy & Shallow copy</title>
+</head>
+<body>
+
+    <script>
+
+        let age = 18 
+        let age2 = age 
+
+        var a = {
+            name: 'it-kamasutra.com', 
+            protocol: "https",
+            maxStudentCount: 10,
+            isOnline: true, 
+            students: ['Ivan', 'Abdrey', 'Farid'],
+            classroom: {
+                teacher: {
+                    name: 'wew',
+                    age: 18
+                }
+            }
+        }
+
+        var b = a 
+
+        var b = {...a}                                      // shallow copy - копируются только примитивы, объекты и массивы не копируются, копируются только ссылки на существующие объекты  
+        b.name = 'it-incubator'
+        b.isOnline = false 
+        b.students.push('Marry')
+        b.classroom.teacher.name = 'Dmitry'           
+        
+        console.log(a == b)
+        console.log({} == {})                               // объекты могут быть равны, только если это ссылки на один и тот же объект 
+        console.log(a.students == b.students)
+        console.log(a.classroom == b.classroom)
+
+        a.classroom.teacher.age = 20 
+        console.log(b.classroom.teacher.age)
+
+
+        var c = {...a}                                      // deep copy 
+        c.classroom = {...a.classroom}
+        c.classroom.teacher = {...a.classroom.teacher}
+        c.students = [...a.students]
+
+        c.classroom.teacher.name = 'Miguel'
+        console.log(c.classroom.teacher.name)
+        console.log(a.classroom.teacher.name)
+        console.log(b.classroom.teacher.name)
+
+        console.log(a.classroom == b.classroom)
+        console.log(a.classroom == c.classroom)
+
+        console.log(a.name == b.name)                       // примитивы сравниваются по значению 
+        console.log(a.name == c.name)
+        console.log(a.maxStudentCount == b.maxStudentCount)
+        console.log(a.maxStudentCount == c.maxStudentCount)
+        console.log(b.maxStudentCount == c.maxStudentCount)
+
+    </script>
+
+</body>
+</html>
