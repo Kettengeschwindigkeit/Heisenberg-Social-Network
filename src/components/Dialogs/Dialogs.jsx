@@ -3,7 +3,6 @@ import styles from './Dialogs.module.css'
 import DialogItem from './DialogItem/DialogItem';
 import Message from './Message/Message';
 
-
 const Dialogs = (props) => {
 
     let state = props.dialogsPage

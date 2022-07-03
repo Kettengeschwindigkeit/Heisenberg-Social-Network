@@ -6,8 +6,6 @@ import Friends from './Friends'
 
 const Navbar = (props) => {
 
-    let state = props.store.getState().sidebar
-
     return (
         <nav className={styles.nav}>
             <div className={styles.item}>
@@ -25,7 +23,7 @@ const Navbar = (props) => {
             <div className={styles.item}>
                 <NavLink to='/settings' activeClassName={styles.activeLink}>Settings</NavLink>
             </div>
-            <Friends state={state} />
+            <Friends state={props.sidebar} />
         </nav>
     )
 }
