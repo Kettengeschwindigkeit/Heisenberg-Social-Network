@@ -12,7 +12,7 @@ let initialState = {
         // { id: 4, followed: false, name: 'Walter J. White', status: "Yo", location: { state: 'New-Mexico', city: 'Albuquerque' }, photoUrl: 'https://pbs.twimg.com/profile_images/3015927487/2a891f966fc3d0605593200f79ad8739_400x400.jpeg' }
      ],
      pageSize: 5,
-     totalUsersCount: 20,
+     totalUsersCount: 0,
      currentPage: 1
 }
 
